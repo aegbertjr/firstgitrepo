@@ -1,0 +1,30 @@
+box: wercker/php
+#build:
+#  steps:
+#    - script:
+#        name: install dependencies
+#        code: |-
+#            composer install --no-interaction
+#    - script:
+#        name: Serve application
+#        code: php -S localhost:8000 >> /dev/null &
+#    - script:
+#        name: PHPUnit integration tests
+#        code: phpunit --configuration phpunit.xml
+deploy:
+  steps:
+    - add-to-known_hosts:
+        hostname: 104.236.95.118
+    - mktemp:
+        envvar: PRIVATEKEY_PATH
+    - create-file:
+        name: write key
+        filename: $PRIVATEKEY_PATH
+        content: $WERCKER_PRIVATE
+        overwrite: true
+    - script:
+        name: transfer application
+        code: |
+          pwd
+          ls -la
+          scp -i $PRIVATEKEY_PATH index.php root@104.236.95.118:/var/www/html/wercker-target
