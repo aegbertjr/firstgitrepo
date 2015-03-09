@@ -1,16 +1,5 @@
-box: wercker/php
-#build:
-#  steps:
-#    - script:
-#        name: install dependencies
-#        code: |-
-#            composer install --no-interaction
-#    - script:
-#        name: Serve application
-#        code: php -S localhost:8000 >> /dev/null &
-#    - script:
-#        name: PHPUnit integration tests
-#        code: phpunit --configuration phpunit.xml
+box: wercker/default
+
 deploy:
   steps:
     - add-to-known_hosts:
