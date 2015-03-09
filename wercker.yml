@@ -14,7 +14,7 @@ box: wercker/php
 deploy:
   steps:
     - add-to-known_hosts:
-        hostname: 104.236.95.118
+        hostname: 104.236.91.7
     - mktemp:
         envvar: PRIVATEKEY_PATH
     - create-file:
