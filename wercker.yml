@@ -5,10 +5,10 @@ deploy:
     - add-to-known_hosts:
         hostname: 104.236.91.7
     - mktemp:
-        envvar: PRIVATEKEY_PATH
+        envvar: WERCKER
     - create-file:
         name: write key
-        filename: $PRIVATEKEY_PATH
+        filename: $WERCKER
         content: $WERCKER_PRIVATE
         overwrite: true
     - script:
