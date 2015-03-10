@@ -16,4 +16,4 @@ deploy:
         code: |
           pwd
           ls -la
-          scp -i $PRIVATEKEY_PATH index.php root@104.236.47.76:/var/www/html/wercker-target
+          scp -i $PRIVATEKEY_PATH *.* root@104.236.47.76:/var/www/html/wercker-target
