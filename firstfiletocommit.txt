@@ -1,3 +1,5 @@
 hello world
 now with keys
 turn on auto deploy on wercker
+turn on auto deploy on wercker
+turn on auto deploy on wercker
